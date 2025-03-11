@@ -14,6 +14,7 @@ java개발자 과정 Database 리포지토리
     - SQL을 배우는 것!
 - Oracle 설치(Docker)
     1. powershell 오픈
+    2. docker search로 다운받고 싶은 이미지 검색
     2. docker pull 내려받기
         ```shell
         PS C:\Users\Admin> docker pull oracleinanutshell/oracle-xe-11g
@@ -40,7 +41,7 @@ java개발자 과정 Database 리포지토리
         ```shell
         docker run --name oracle11g -d -p 1521:1521 --restart=always oracleinanutshell/oracle-xe-11g
         ```
-        - 1522 - Oracle 기본포트
+        - 1521 - Oracle 기본포트
         - 아이디 system / oracle
     5. 도커 실행확인
         - Docker Desktop > containers 확인
@@ -57,16 +58,16 @@ java개발자 과정 Database 리포지토리
 -  DBeaver Community 툴 설치
     - https://dbeaver.io/download/
 - DML, DDL, DCL
-    -언어의 특징을 가지고 있음
-        - 프로그래밍언어와 차이 - 어떻게(how)
+    - 언어의 특징을 가지고 있음
+        - 프로그래밍언어 - 어떻게(how)
         - SQL - 무엇(what) 
     - SQL의 구성요소 3가지
-    - DDL(Data Definition Lang) - 데이터베이스 생성, 테이블 생성, 객체 생성, 수정, 삭제
-        - CREATE, ALTER, DROP ...
-    - DCL(Data Control Lang) - 사용자 권한 부여, 해제, 트랜잭션 시작, 종료
-        - GRANT, REVOKE, BEGIN TRANS, COMMIT, ROLLBACK
-    - DML(Data Manupulation Lang) - 데이터 조작언어(핵심!), 데이터 삽입, 조회, 수정, 삭제
-        - INSERT, SELECT, UPDATE, DELETE
+        - DDL(Data Definition Lang) - 데이터베이스 생성, 테이블 생성, 객체 생성, 수정, 삭제
+            - CREATE, ALTER, DROP ...
+        - DCL(Data Control Lang) - 사용자 권한 부여, 해제, 트랜잭션 시작, 종료
+            - GRANT, REVOKE, BEGIN TRANS, COMMIT, ROLLBACK
+        - **DML**(Data Manupulation Lang) - 데이터 조작언어(핵심!), 데이터 삽입, 조회, 수정, 삭제
+            - `INSERT`, `SELECT`, `UPDATE`, `DELETE`
 
 - SELECT 기본
     - 데이터 조회 시 사용하는 기본명령어 
@@ -82,11 +83,17 @@ java개발자 과정 Database 리포지토리
          [ORDER BY 정렬속성(들) ASC|DESC]
          [WITH ROLLUP]
         ```
-    - 기본 쿼리 학습 : [SQL](./day1/sql01_select.sql)
+    - 기본 쿼리 학습 : [SQL](./day01/sql01_select기본.sql)
         1. 기본 SELECT
         2. WHERE 조건절
         3. NULL(!)
         4. ORDER BY 정렬
         5. 집합
+
+- 함수(내장함수)
+    - 문자함수 [SQL](./day01/sql02_함수.sql)
+    - 숫자함수
+    
+
 
 ## 2일차
