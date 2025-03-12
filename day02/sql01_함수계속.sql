@@ -94,6 +94,98 @@ SELECT to_char(sysdate + INTERVAL '9' HOUR, 'yyyy-mm-dd hh24:mi:ss') AS seoul_ti
 /*
  * 형 변환 함수
  * */
+-- to_char()
+-- 숫자형을 문자형으로 변경
+SELECT 12345 AS 원본
+	 , to_char(12345,'9999999') AS "원본+두자리" 
+	 , to_char(12345,'0999999') AS "원본+두자리0" 
+	 , to_char(12345,'$99999') AS "통화단위+원본" 
+	 , to_char(12345,'99999.99') AS "소수점"
+	 , to_char(12345,'99,999') AS "천단위쉼표" --진짜 많이씀
+  FROM dual;
+
+
+-- TO_NUMBER() 문자형된 데이터를 숫자로
+SELECT '5.0' * 5
+	, to_number('5.0') AS 숫자형변환 
+--	, to_number('hello') -- 숫자로 변경할 수 없는 형태
+  FROM dual;
+
+-- TO_DATE() 날짜형태를 문자형으로
+SELECT '2025-03-12'
+	 , to_date('2025-03-12') + 10 --날짜형으로 바꾸면 연산가능!
+  FROM dual;
+
+/*
+ * 일반함수
+ */
+-- NVL() (컬럼|데이터, 바꿀값) 널값을 다른값으로 치환
+SELECT commission_pct
+	 , nvl(commission_pct, 0.0) -- 꽤 쓰임
+  FROM employees;
+
+SELECT nvl(hire_date, sysdate) --입사일자가 비어있으면 오늘날짜로 대체
+  FROM employees;
+
+-- NVL2(컬럼|데이터, 널이아닐때 처리, 널일때 처리할 부분)
+SELECT commission_pct
+	 , salary
+	 , nvl2(commission_pct, salary + (salary * EMPLOYEES.COMMISSION_pct), salary) AS 커미션급여
+  FROM employees;
+
+-- DECODE(A, B, '1', '2') A가 B일경우 1아니면 2
+-- 오라클만 있는 함수
+SELECT email, phone_number, job_id
+	 , decode(job_id, 'IT_PROG', '개발자만쉐!!','나머진 다죽어') AS 캐치프레이즈
+  FROM employees;
+--  WHERE job_id = 'IT_PROG'
+
+/*
+ * CASE구문, 정말중요!!
+ * if, elif의 중복된 구문과 유사
+ * */
+SELECT CASE job_id WHEN 'AD_PRES' THEN '사장'
+				   WHEN 'AD_VP' THEN '부사장'
+				   WHEN 'IT_PROG' THEN '프로그래머'
+				   WHEN 'SA_MAN' THEN '영업사원'
+				   ELSE '미분류'
+	   END AS 직급
+	 , employee_id
+	 , job_id 
+  FROM employees;
+
+/*
+ * 정규식(Regula Expression) - 문자열 패턴을 가지고, 동일한 패턴 데이터 추출 사용 
+ * ^, $, ., *, [], [^] 패턴인식할때 필요한 키워드
+ * */
+SELECT *
+  FROM employees
+ WHERE phone_number LIKE '%.%.%'; --세자리 전화, 네자리 전화번호가 구분안됨
+
+ -- 전화번호가 .로 구분되는 세자리 전화번호만 필터링
+ -- '[0-9]{6}-[0-9]{7}' 주민번호 정규식 패턴
+SELECT *
+  FROM employees
+ WHERE regexp_like(phone_number, '[0-9]{3}.[0-9]{3}.[0-9]{4}');
+
+ -- first_name이 J로 시작하고, 두번째 글자가 a나 o인 사람을 출력하시오.
+SELECT *
+  FROM employees
+ WHERE regexp_like(first_name, '^J(a|o)');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
