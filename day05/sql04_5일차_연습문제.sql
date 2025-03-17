@@ -30,3 +30,4 @@ SELECT d.dname, s.height, s.name, s.height
 	  				   	    FROM student
 	  				   	   GROUP BY deptno1) s
  WHERE s.deptno1 = d.deptno;
+COMMIT;
