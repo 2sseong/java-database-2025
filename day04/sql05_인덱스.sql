@@ -86,6 +86,7 @@ SELECT *
   FROM SAMPLE_T
  WHERE test3 = 'A678';
 
+-- autocommit을 끄고나면 DDL, DML(select이외) 작업 후 필히 commit; 수행 후 파일 저장
 COMMIT;
 
 

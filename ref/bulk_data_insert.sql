@@ -14,9 +14,9 @@ DECLARE
 TYPE tbl_ins IS TABLE OF sample_t%ROWTYPE INDEX BY BINARY_INTEGER;
 w_ins tbl_ins;
 BEGIN
-FOR i IN 1..1000000 LOOP 
+FOR i IN 1..10000000 LOOP 
    w_ins(i).id1   := i;
-   w_ins(i).id2   := i||ceil(dbms_random.value(1, 10000000));
+   w_ins(i).id2   := i||ceil(dbms_random.value(1, 100000000));
    w_ins(i).name  := dbms_random.string('x',5);
    w_ins(i).date1 := round(dbms_random.value(2010,2021))||to_char(round(dbms_random.value(1,12)), 'FM09')||to_char( round(dbms_random.value(1,28)), 'FM09');
    w_ins(i).date2 := '2021'||to_char(round(dbms_random.value(1,12)) , 'FM09')||to_char(round(dbms_random.value(1,28)), 'FM09');
@@ -28,7 +28,7 @@ FOR i IN 1..1000000 LOOP
    w_ins(i).test2 := 'SQLP';
    w_ins(i).test3 := 'A'||ceil(dbms_random.value(100, 999));
 END LOOP;
-FORALL i in 1..1000000 INSERT INTO sample_t VALUES w_ins(i);
+FORALL i in 1..10000000 INSERT INTO sample_t VALUES w_ins(i);
    COMMIT;
 END;
 /
