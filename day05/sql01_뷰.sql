@@ -2,6 +2,7 @@
  * VIEW
  */
 --sysdba로 실행해야 함
+-- ROLE CONNECT, RESOURCE는 부여했지만,
 GRANT CREATE VIEW TO sampleuser;
 
 --

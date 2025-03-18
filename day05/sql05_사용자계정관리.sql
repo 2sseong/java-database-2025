@@ -31,7 +31,7 @@ AS
 	  FROM jobs;
 
 -- HR계정에 어떤 권한이 있는지 조회
-SELECT *
+SELECT *x
   FROM USER_tab_privs;
 
 -- HR로 테이블 생성
