@@ -3,7 +3,7 @@ import sys
 from PyQt5.QtWidgets import *
 
 # PyQt의 모든 컨트롤은 Widget(위젯)이라고 부름.
-class DevWin(QMainWindow):  # 클래스 선언
+class DevWindow(QMainWindow):  # 클래스 선언
     def __init__(self):     # 클래스 초기화 스페셜메서드
             super().__init__()  # 부모클래스 QMainWindow도 초기화
 

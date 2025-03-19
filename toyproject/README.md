@@ -21,10 +21,19 @@ Python GUI - Oracle연동 프로그램
 
 ### PyQt5를 GUI 사용
 - PyQt5 설치
-    - 콘솔 pip install PyQt5
+    - 콘솔에서 pip install PyQt5
 - QtDesigner 설치
     - https://build-system.fman.io/qt-designer-download 다운로드 후 설치
 
+<img src='../image/db00007.png' width=750>
 
 #### PyQt5 개발
-1. 
+1. PyQt 모듈 사용 윈앱 만들기
+2. 윈도우 기본설정
+3. PyQt 위젯 사용법(레이블, 버튼, ...)
+4. 시그널(이벤트) 처리방법
+5. QtDesigner로 화면디자인, PyQt와 연동
+
+
+
+<img src='../image/db00006.png' width=750>
