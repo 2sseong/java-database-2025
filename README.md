@@ -362,3 +362,7 @@ java개발자 과정 Database 리포지토리
 ## 7, 8, 9일차
 - Oracle연동 Python GUI 프로그램 개발
     - [오라클연동](./toyproject/README.md)
+
+## 10일차 
+- HR SQL연습
+- 코딩테스트 진행 
