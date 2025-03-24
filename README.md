@@ -111,7 +111,7 @@ java개발자 과정 Database 리포지토리
 
 - 데이터베이스 타입형
     - **CHAR(n)** - 고정형 문자열, 최대 2000byte
-        - CHAR(20)으로 'Hello World'를 저장하면, 'Hello World         '로 저장!(공백포함됨)
+        - CHAR(20)으로 'Hello World'를 저장하면, 'Hello World```````'로 저장!(공백포함됨)
         - 기준코드나 반드시 자리수를 지켜야하는 데이터 필요
     - **VARCHAR2(n)** - 가변형 문자열, 최대 4000byte 
         - VARCHAR2(20)로'Hello World'를 저장하면, 'Hello World'로 저장!
@@ -140,7 +140,7 @@ java개발자 과정 Database 리포지토리
         - INNER JOIN 또는 오라클 간결문법 사용
     - 외부조인
         - PK와 FK간 일치하지 않는 데이터도 출력하고자 할때 사용하는 방법
-        - LEFT OUTER JJOIN, RIGHT OUTER JOIN 또는 오라클 간결문법 사용
+        - LEFT OUTER JOIN, RIGHT OUTER JOIN 또는 오라클 간결문법 사용
 - DDL [SQL](./day03/sql03_DDL.sql)
     - CREATE - TABLE, VIEW, PROCEDURE, FUNCTION, 개체를 생성하는 키워드
         ```sql
@@ -359,6 +359,6 @@ java개발자 과정 Database 리포지토리
 
         ```
 
-## 7, 8일차
+## 7, 8, 9일차
 - Oracle연동 Python GUI 프로그램 개발
     - [오라클연동](./toyproject/README.md)

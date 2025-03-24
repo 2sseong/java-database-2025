@@ -101,6 +101,8 @@ Python GUI - Oracle연동 프로그램
         - 압축해제(C:\DEV\Tool), 시스템정보 Path 등록(시스템속성>환경변수>시스템변수Path>새로만들기>경로입력)
         - 재부팅
     - 콘솔 테스트 결과
+
+
         <img src='../image/db0008.png' width="400">
 
 - QtDesigner로 화면 구성
