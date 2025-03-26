@@ -9,7 +9,7 @@ autoextend on NEXT 5m;
 -- 사용자 추가
 drop user bookuser cascade;
 
-create user bookuser identified by 12345
+CREATE USER bookuser identified by 12345
 default tablespace bookrentalshop
 temporary tablespace temp
 quota unlimited on bookrentalshop
